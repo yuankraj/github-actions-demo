@@ -1,25 +1,26 @@
 name: First Github Actions Workflow
 
-on: 
+on:
   push:
 
 jobs:
   greet:
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-   steps:
-     - name: Checkout Repository
-       uses: actions/checkout@v4
-       
-     - name: Print Greeting 
-       run: echo "hello from github actions!"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-     - name: print date & time
-       run: date 
+      - name: Print Greeting
+        run: echo "hello from github actions!"
 
-     - name: print branch name 
-       run: echo "branch: ${{ github.ref_name }}"
+      - name: Print date & time
+        run: date
 
-     - name:  print runner os & check docker version
-       run: echo $RUNNER_OS && docker --version
-    
+      - name: Print branch name
+        run: echo "branch: ${{ github.ref_name }}"
+
+      - name: Print runner OS & check docker version
+        run: |
+          echo $RUNNER_OS
+          docker --version
