@@ -13,4 +13,13 @@ jobs:
        
      - name: Print Greeting 
        run: echo "hello from github actions!"
+
+     - name: print date & time
+       run: date 
+
+     - name: print branch name 
+       run: echo "branch: ${{ github.ref_name }}"
+
+     - name:  print runner os & check docker version
+       run: echo $RUNNER_OS && docker --version
     
